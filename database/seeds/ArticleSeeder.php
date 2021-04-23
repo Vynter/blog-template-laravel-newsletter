@@ -14,8 +14,9 @@ class ArticleSeeder extends Seeder
         $faker = Faker\Factory::create('fr_FR');
         $user = App\User::pluck('id')->toArray();
         $data = [];
-        $title = $faker->sentence(rand(6, 10)); // astuce pour le slug
+
         for ($i = 1; $i <= 100; $i++) {
+            $title = $faker->sentence(rand(4, 10)); // astuce pour le slug
             array_push($data, [
                 'title' => $title,
                 'sub_title' => $faker->sentence(rand(10, 15)),
