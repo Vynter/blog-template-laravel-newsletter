@@ -20,7 +20,7 @@ class Article extends Model
         return Carbon::parse($this->published_at)->diffForHumans();
     }
 
-
+    //
     public function user()
     {
         return $this->belongsTo('App\User');
