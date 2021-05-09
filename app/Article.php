@@ -12,11 +12,13 @@ class Article extends Model
 
     /*
     |----------------------------------------------------------------------------------------------------
-    |mutator
+    |accesor
     |----------------------------------------------------------------------------------------------------
     */
     public function getDatePublicationAttribute()
+
     {
+        //return Carbon::parse($this->published_at)->format('d/m/Y');
         return Carbon::parse($this->published_at)->diffForHumans();
     }
 
