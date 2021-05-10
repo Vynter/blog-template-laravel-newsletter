@@ -10,8 +10,9 @@ class PageController extends Controller
 {
     public function index()
     {
-        $articles = Article::orderBy('id', 'desc')->paginate(10);
-
+        //$articles = Article::orderBy('id', 'desc')->paginate(10);
+        //$articles = Article::latest('id')->paginate(10);
+        $articles = Article::recherche()->orderBy('id', 'desc')->paginate(10);
         return view('pages.index', compact('articles'));
     }
 
@@ -19,6 +20,7 @@ class PageController extends Controller
     {
         //$article = Article::where('slug', $slug)->get(); //retourne une collection
         $article = Article::where('slug', $slug)->first(); //retourne premier
+
         return view('articles.show', compact('article'));
     }
 
