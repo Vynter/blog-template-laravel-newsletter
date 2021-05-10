@@ -10,7 +10,7 @@
 
 
         <div class="post-preview">
-          <a href="#">
+          <a href="{{route('pages.show',$article->slug)}}">
             <h2 class="post-title">
               {{ $article->id }}-
                 {{$article->title}}
@@ -29,12 +29,12 @@
 
         <div>
 
-        <div class="text-center">
-            {{$articles->links()}}
-        </div>
-        <!--<div class="clearfix">
-          <a class="btn btn-primary float-right" href="#">Older Posts &rarr;</a>
-        </div> -->
+            <div class="text-center">
+                {{$articles->links()}}
+            </div>
+            <!--<div class="clearfix">
+            <a class="btn btn-primary float-right" href="#">Older Posts &rarr;</a>
+            </div> -->
       </div>
     </div>
   </div>

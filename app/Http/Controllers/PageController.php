@@ -14,6 +14,15 @@ class PageController extends Controller
 
         return view('pages.index', compact('articles'));
     }
+
+    public function show($slug)
+    {
+        //$article = Article::where('slug', $slug)->get(); //retourne une collection
+        $article = Article::where('slug', $slug)->first(); //retourne premier
+        return view('articles.show', compact('article'));
+    }
+
+
     public function about()
     {
         return view('pages.about');
