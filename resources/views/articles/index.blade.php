@@ -16,7 +16,7 @@
 
 
         <div class="post-preview">
-          <a href="{{route('pages.show',$article->slug)}}">
+          <a href="{{route('articles.show',$article->slug)}}">
             <h2 class="post-title">
               {{ $article->id }} - {!! $article->title_searched !!}
             </h2>

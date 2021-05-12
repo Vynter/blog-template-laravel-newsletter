@@ -12,8 +12,12 @@ class PageController extends Controller
     {
         //$articles = Article::orderBy('id', 'desc')->paginate(10);
         //$articles = Article::latest('id')->paginate(10);
-        $articles = Article::recherche()->orderBy('id', 'desc')->paginate(10);
-        return view('pages.index', compact('articles'));
+        $articles = Article::recherche()
+            ->latest('id')
+            ->with('user')
+            ->paginate(10);
+
+        return view('articles.index', compact('articles'));
     }
 
     public function show($slug)

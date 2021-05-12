@@ -14,7 +14,12 @@ class ArticleController extends Controller
      */
     public function index()
     {
-        //
+        $articles = Article::recherche()
+            ->latest('id')
+            ->with('user')
+            ->paginate(10);
+
+        return view('articles.index', compact('articles'));
     }
 
     /**
@@ -24,7 +29,7 @@ class ArticleController extends Controller
      */
     public function create()
     {
-        //
+        return view('articles.create');
     }
 
     /**
@@ -35,7 +40,11 @@ class ArticleController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $article = Article::create(request()->all() + [
+            'slug' => \Str::slug(request('title'))
+        ]); // mass Assignment
+
+        return redirect()->route('articles.show', $article);
     }
 
     /**
@@ -46,7 +55,8 @@ class ArticleController extends Controller
      */
     public function show(Article $article)
     {
-        //
+        //retourne les articles qui ont le slug sur lequel t'as cliqué dans l'index
+        return view('articles.show', compact('article'));
     }
 
     /**
