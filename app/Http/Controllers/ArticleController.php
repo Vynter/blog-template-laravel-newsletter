@@ -40,6 +40,14 @@ class ArticleController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'title' => 'required|min:3|max:255',
+            'sub_title' => 'required',
+            'body' => 'required',
+            'published_at' => 'required|date',
+            'user_id' => 'required|integer'
+        ]);
+
         $article = Article::create(request()->all() + [
             'slug' => \Str::slug(request('title'))
         ]); // mass Assignment
