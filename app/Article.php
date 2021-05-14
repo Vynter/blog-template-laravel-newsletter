@@ -2,13 +2,15 @@
 
 namespace App;
 
+
 use Carbon\Carbon; //me
+use Illuminate\Support\Str;
 use Illuminate\Database\Eloquent\Model;
 
 class Article extends Model
 {
     protected $guarded = [];
-    protected $filliable = ['id', 'title', 'sub_title', 'slug', 'body', 'published_at', 'user_id']; //les champ qui devront étre remplis
+    protected $filliable = ['id', 'title', 'sub_title', 'slug', 'body', 'published_at',]; //les champ qui devront étre remplis
 
 
 
@@ -54,7 +56,7 @@ class Article extends Model
 
     public function setSlugAttribute()
     {
-        $this->attributes['slug'] = \Str::slug($this->title);
+        $this->attributes['slug'] = Str::slug($this->title);
     }
 
     /*
@@ -64,7 +66,7 @@ class Article extends Model
     */
     public function user()
     {
-        return $this->belongsTo('App\User');
+        return $this->belongsTo(User::class);
     }
 
     /*

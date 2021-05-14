@@ -17,7 +17,7 @@
   <link href="/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
   <!-- Custom styles for this template -->
 
-  <link href="/css/site.css" rel="stylesheet">
+  <link href="{{mix('/css/app.css')}}" rel="stylesheet">
 </head>
 
 <body>
@@ -44,6 +44,16 @@
           <li class="nav-item">
             <a class="nav-link {{Route::currentRouteName()==="contact"? "active": "" }}" href="{{route('contact')}}">Contact</a>
           </li>
+        @if (auth()->check())
+            <li class="nav-item">
+                <a class="nav-link {{Route::currentRouteName()==="logout"? "active": "" }}" href="{{route('logout')}}">logout</a>
+            </li>
+            @else
+            <li class="nav-item">
+                <a class="nav-link {{Route::currentRouteName()==="login"? "active": "" }}" href="{{route('login')}}">login</a>
+            </li>
+        @endif
+
         </ul>
       </div>
     </div>

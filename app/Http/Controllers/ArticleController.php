@@ -3,10 +3,17 @@
 namespace App\Http\Controllers;
 
 use App\Article;
+
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 
 class ArticleController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth')->only('create', 'store'); // faut étre log
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -45,11 +52,12 @@ class ArticleController extends Controller
             'sub_title' => 'required',
             'body' => 'required',
             'published_at' => 'required|date',
-            'user_id' => 'required|integer'
+
         ]);
 
-        $article = Article::create(request()->all() + [
-            'slug' => \Str::slug(request('title'))
+        $article = auth()->user()->articles()->create(request()->all() + [
+            'slug' => Str::slug(request('title')),
+            //'user_id' => auth()->id()
         ]); // mass Assignment
 
         return redirect()->route('articles.show', $article);

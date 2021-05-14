@@ -1,11 +1,10 @@
-//
-@import "bootstrap";
-@import "https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic";
-@import "https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800";
-//@import "./clean-blog.css";
-@import "./clean-blog.min.css";
+// Fonts
+@import url("https://fonts.googleapis.com/css?family=Nunito");
 
-.navbar-nav .active {
-    text-decoration: underline;
-    color: white;
-}
+// Variables
+@import "variables";
+
+// Bootstrap
+@import "~bootstrap/scss/bootstrap";
+
+@import "./clean-blog.min.css";
