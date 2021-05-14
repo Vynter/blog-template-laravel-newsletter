@@ -8,3 +8,7 @@
 @import "~bootstrap/scss/bootstrap";
 
 @import "./clean-blog.min.css";
+
+.navbar-nav .active {
+    text-decoration: underline;
+}

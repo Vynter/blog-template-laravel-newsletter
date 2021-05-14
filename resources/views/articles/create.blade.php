@@ -5,7 +5,7 @@
 <div class="container">
     <div class="row">
       <div class="col-lg-8 col-md-10 mx-auto">
-        <p>Créer votre article</p>
+        <h2>Créer votre article</h2>
     @if ($errors->any())
         <div class="alert alert-danger">
             <ul>
@@ -41,15 +41,23 @@
           </div>
           <div class="control-group">
             <div class="form-group floating-label-form-group controls">
-              <label>Texte</label>
+              <label>Contenu</label>
               <textarea rows="5"  class="form-control" name="body" placeholder="Veuillez saisir le texte.." required >{{old('body')}}</textarea>
 
             </div>
           </div>
+          <div class="control-group">
+              <div class="form-group floating-label-form-group controls">
+
+                    <label>image</label>
+                    <input class="form-control" type="file" name="image">
+
+              </div>
+          </div>
 
           <br>
           <div class="form-group">
-          <button type="submit" class="btn btn-primary" id="sendMessageButton">Send</button></div>
+          <button type="submit" class="btn btn-primary" id="sendMessageButton">Crée l'article</button></div>
         </form>
       </div>
     </div>

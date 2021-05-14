@@ -13,14 +13,15 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto">
-            {{$article->body}}
+            <p>{{$article->body}}</p>
+
+            {{$article->date_publication}}
         </div>
       </div>
     </div>
   </article>
 <div class="container">
-{{$article->title}}
-{{$article->date_publication}}
+
 
 </div>
 

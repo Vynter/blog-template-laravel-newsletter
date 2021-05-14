@@ -45,6 +45,9 @@
             <a class="nav-link {{Route::currentRouteName()==="contact"? "active": "" }}" href="{{route('contact')}}">Contact</a>
           </li>
         @if (auth()->check())
+        <li class="nav-item">
+            <a class="nav-link {{Route::currentRouteName()==="articles.create"? "active": "" }}" href="{{route('articles.create')}}">Crée un article</a>
+          </li>
             <li class="nav-item">
                 <a class="nav-link {{Route::currentRouteName()==="logout"? "active": "" }}" href="{{route('logout')}}">logout</a>
             </li>

@@ -10946,3 +10946,7 @@ a.text-dark:focus {
   }
 }
 
+.navbar-nav .active {
+  text-decoration: underline;
+}
+
