@@ -12,7 +12,8 @@
         "fideloper/proxy": "^4.4",
         "intervention/image": "^2.5",
         "laravel/framework": "^6.20",
-        "laravel/tinker": "^2.5"
+        "laravel/tinker": "^2.5",
+        "realrashid/sweet-alert": "^3.2"
     },
     "require-dev": {
         "barryvdh/laravel-debugbar": "^3.5",

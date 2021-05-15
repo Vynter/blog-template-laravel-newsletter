@@ -3,9 +3,9 @@
 @section('title')
     {{$article->title}}
 @endsection
-
+<!--si l'image existe on l'affiche sinon celle de base-->
 @section('bg-image')
-    @if ($article->image) <!--si l'image existe on l'affiche sinon celle de base-->
+    @if ($article->image)
     /storage/{{$article->image}}
         @else
         /img/home-bg.jpg
