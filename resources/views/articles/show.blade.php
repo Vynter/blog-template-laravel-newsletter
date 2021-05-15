@@ -5,7 +5,12 @@
 @endsection
 
 @section('bg-image')
-/storage/{{$article->image}}
+    @if ($article->image) <!--si l'image existe on l'affiche sinon celle de base-->
+    /storage/{{$article->image}}
+        @else
+        /img/home-bg.jpg
+    @endif
+
 @endsection
 
 @section('sub_title')
