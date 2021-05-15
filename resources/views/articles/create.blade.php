@@ -1,6 +1,10 @@
 
 @extends('default')
 
+@section('bg-image')
+    /img/post-bg.jpg
+@endsection
+
 @section('content')
 <div class="container">
     <div class="row">
@@ -15,7 +19,7 @@
             </ul>
         </div>
     @endif
-        <form action="{{route('articles.store')}}" method="POST" >
+        <form action="{{route('articles.store')}}" method="POST" enctype="multipart/form-data">
             @csrf
           <div class="control-group">
             <div class="form-group floating-label-form-group controls">

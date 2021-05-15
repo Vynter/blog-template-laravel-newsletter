@@ -53,6 +53,8 @@ class ArticleController extends Controller
             'body' => 'required',
             'published_at' => 'required|date',
 
+            'image' => 'image',
+
         ]);
 
         $article = auth()->user()->articles()->create(request()->all() + [

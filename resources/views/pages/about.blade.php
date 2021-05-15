@@ -1,4 +1,7 @@
 @extends('default')
+@section('bg-image')
+    /img/about-bg.jpg
+@endsection
 
 @section('content')
       <!-- Main Content -->
