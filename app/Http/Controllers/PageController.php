@@ -2,14 +2,17 @@
 
 namespace App\Http\Controllers;
 
-use App\Article; //me
 use App\User;
+use App\Article; //me
 use Illuminate\Http\Request;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class PageController extends Controller
 {
     public function index()
     {
+        //Alert::success('Success Title', 'Success Message');
+
         //$articles = Article::orderBy('id', 'desc')->paginate(10);
         //$articles = Article::latest('id')->paginate(10);
         $articles = Article::recherche()

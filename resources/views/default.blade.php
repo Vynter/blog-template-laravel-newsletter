@@ -85,6 +85,19 @@
   <!-- Footer -->
   <footer>
     <div class="container">
+        <div class="row d-flex align-content-center justify-content-center mb-4">
+            <form class="form-inline" action="{{route('newsletter.store')}}" method="POST">
+                @csrf
+            <input type="email" name="mail" class="form-control" placeholder="Votre Email...">
+            <button class="btn btn-info" >Newsletter</button>
+            </form>
+
+
+
+
+
+        </div>
+
       <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto">
           <ul class="list-inline text-center">

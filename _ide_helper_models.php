@@ -48,6 +48,25 @@ namespace App{
 
 namespace App{
 /**
+ * App\Newsletter
+ *
+ * @property int $id
+ * @property string $mail
+ * @property \Illuminate\Support\Carbon|null $created_at
+ * @property \Illuminate\Support\Carbon|null $updated_at
+ * @method static \Illuminate\Database\Eloquent\Builder|Newsletter newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|Newsletter newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|Newsletter query()
+ * @method static \Illuminate\Database\Eloquent\Builder|Newsletter whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Newsletter whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Newsletter whereMail($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Newsletter whereUpdatedAt($value)
+ */
+	class Newsletter extends \Eloquent {}
+}
+
+namespace App{
+/**
  * App\User
  *
  * @property int $id

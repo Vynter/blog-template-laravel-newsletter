@@ -6,6 +6,7 @@ use App\Article;
 
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class ArticleController extends Controller
 {
@@ -61,7 +62,7 @@ class ArticleController extends Controller
             'slug' => Str::slug(request('title')),
             //'user_id' => auth()->id()
         ]); // mass Assignment
-
+        Alert::success('Création de l\'article', 'Crée avec succée');
         return redirect()->route('articles.show', $article);
     }
 
