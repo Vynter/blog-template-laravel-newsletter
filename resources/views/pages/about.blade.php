@@ -1,6 +1,6 @@
 @extends('default')
 @section('bg-image')
-    /img/about-bg.jpg
+    /img/login-bg.jpg
 @endsection
 
 @section('content')

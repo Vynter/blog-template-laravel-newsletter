@@ -1,5 +1,9 @@
  @extends(/*'layouts.app'*/ 'default')
 
+ @section('bg-image')
+ /img/home-bg.jpg
+@endsection
+
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
