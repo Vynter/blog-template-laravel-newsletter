@@ -48,6 +48,7 @@ class ArticleController extends Controller
      */
     public function store(Request $request)
     {
+
         $request->validate([
             'title' => 'required|min:3|max:255',
             'sub_title' => 'required',

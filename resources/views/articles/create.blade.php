@@ -2,7 +2,7 @@
 @extends('default')
 
 @section('bg-image')
-    /img/post-bg.jpg
+    /img/img.jpg
 @endsection
 
 @section('content')

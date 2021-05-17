@@ -74,7 +74,7 @@
         <div class="col-lg-8 col-md-10 mx-auto">
           <div class="site-heading">
             <h1 class="tv"> @yield('title','Travel Blog')</h1>
-            <span class="subheading"> @yield('sub_title','A Blog Theme by Start Bootstrap')</span>
+            <span class="subheading"> @yield('sub_title','Travel Better Cheaper Longer')</span>
           </div>
         </div>
       </div>
