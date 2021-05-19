@@ -8,7 +8,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>@yield('title','Clean Blog - Start Bootstrap Theme')</title>
+  <title>@yield('title','Travel Blog - Travel Better Cheaper Longer')</title>
 
   <!-- Bootstrap core CSS -->
 
