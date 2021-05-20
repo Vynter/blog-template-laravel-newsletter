@@ -24,10 +24,10 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        $schedule->command('php artisan blog:send-newsletter')
-            ->weekly();
-        $schedule->command('php artisan blog:send-newsletter')
-            ->weeklyOn('1', '6:00'); // le lundi a 6h
+        /*$schedule->command('blog:send-newsletter')->weekly();*/
+        $schedule->command('blog:send-newsletter')->everyMinute(); //weeklyOn('1', '6:00'); // le lundi a 6h
+        $schedule->command('blog:send-newsletter')->weeklyOn('1', '6:00'); // le lundi a 6h
+        $schedule->command('backup:run')->dailyAt('05:00');
     }
 
     /**
