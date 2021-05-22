@@ -12,7 +12,7 @@ class ArticleController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('auth')->only('create', 'store'); // faut étre log
+        $this->middleware(['auth', 'checkRole'])->only('create', 'store'); // faut étre log
     }
 
     /**
