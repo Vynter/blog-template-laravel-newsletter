@@ -17,7 +17,7 @@ class CheckRole
     public function handle($request, Closure $next)
     {
         if (request()->user()->role == 0) {
-            Alert::alert('Accée interdit', 'Vous l\'avez pas l\'accée a cette partie', 'error');
+            Alert::alert('Accée interdit', 'Vous n\'avez pas l\'accée a cette partie', 'error');
             //return abort(403);
             return back();
         }
