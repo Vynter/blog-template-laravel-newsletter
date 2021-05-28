@@ -29,3 +29,11 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 //newsletter
 Route::post('newsletter', 'NewsletterController@store')->name('newsletter.store');
+
+//socialite
+Route::get('login/github', 'Auth\LoginController@redirectToProvider')->name('login.github');
+Route::get('login/github/callback', 'Auth\LoginController@handleProviderCallback');
+
+/*
+Route::get('login/{social}', 'Auth\LoginController@redirectToProvider')->name('login.{social}');
+Route::get('login/{social}/callback', 'Auth\LoginController@handleProviderCallback');*/

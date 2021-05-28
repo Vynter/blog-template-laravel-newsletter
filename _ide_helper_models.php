@@ -93,6 +93,8 @@ namespace App{
  * @method static \Illuminate\Database\Eloquent\Builder|User whereRememberToken($value)
  * @method static \Illuminate\Database\Eloquent\Builder|User whereUpdatedAt($value)
  * @mixin \Eloquent
+ * @property int $role
+ * @method static \Illuminate\Database\Eloquent\Builder|User whereRole($value)
  */
 	class User extends \Eloquent {}
 }
