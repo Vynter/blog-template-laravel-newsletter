@@ -28,10 +28,11 @@ namespace App{
  * @property-read mixed $sub_title_searched
  * @property-read mixed $title_searched
  * @property-read \App\User $user
+ * @method static \Illuminate\Database\Eloquent\Builder|Article home()
  * @method static \Illuminate\Database\Eloquent\Builder|Article newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Article newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Article query()
- * @method static \Illuminate\Database\Eloquent\Builder|Article recherche()
+ * @method static \Illuminate\Database\Eloquent\Builder|Article recherche($q)
  * @method static \Illuminate\Database\Eloquent\Builder|Article whereBody($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Article whereCreatedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Article whereId($value)

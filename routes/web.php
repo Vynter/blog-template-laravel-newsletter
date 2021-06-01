@@ -14,7 +14,7 @@
 /*Route::get('/', function () {
     return view('default');
 });*/
-Route::get('/', 'PageController@index')->name('index'); // main page
+//Route::get('/', 'PageController@index')->name('index'); // main page
 Route::get('about', 'PageController@about')->name('about'); // about
 Route::get('sample', 'PageController@sample')->name('sample'); // random
 Route::get('contact', 'PageController@contact')->name('contact'); // contacte
@@ -26,7 +26,7 @@ Route::resource('articles', 'ArticleController');
 Auth::routes(); // it came with auth
 
 Route::get('/home', 'HomeController@index')->name('home');
-
+Route::get('/', 'ArticleController@index')->name('index'); // main page overreed route
 //newsletter
 Route::post('newsletter', 'NewsletterController@store')->name('newsletter.store');
 

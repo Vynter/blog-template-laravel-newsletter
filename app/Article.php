@@ -6,7 +6,7 @@ namespace App;
 use Carbon\Carbon; //me
 use Illuminate\Support\Str;
 use Illuminate\Database\Eloquent\Model;
-
+use Cache;
 // import the Intervention Image Manager Class
 use Illuminate\Support\Facades\Storage;
 use Intervention\Image\ImageManagerStatic as Image;
@@ -92,9 +92,21 @@ class Article extends Model
     |----------------------------------------------------------------------------------------------------
     */
 
-    public function scopeRecherche($query)
+    public function scopeRecherche($query, $q)
+    {
+
+        return $query->where('title', 'like', "%$q%")->orWhere('sub_title', 'like', "%$q%")->orWhere('body', 'like', "%$q%");
+    }
+
+
+    public function scopeHome($query)
     {
         $q = request('q');
-        return $query->where('title', 'like', "%$q%")->orWhere('sub_title', 'like', "%$q%")->orWhere('body', 'like', "%$q%");
+
+        return Cache::remember('home-page-' . $q, 60 * 20, function () use ($query, $q) {
+            return $query->recherche($q)
+                ->latest('id')
+                ->with('user')->paginate(10);
+        });
     }
 }

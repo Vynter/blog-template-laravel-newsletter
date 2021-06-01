@@ -19,7 +19,7 @@ class PageController extends Controller
             ->latest('id')
             ->with('user')
             ->paginate(10);
-
+        //$articles = Article::home();
         return view('articles.index', compact('articles'));
     }
 

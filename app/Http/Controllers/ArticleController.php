@@ -22,11 +22,15 @@ class ArticleController extends Controller
      */
     public function index()
     {
-        $articles = Article::recherche()
+        /*
+        $q = request('q');
+        $articles = Article::recherche($q)
             ->latest('id')
             ->with('user')
-            ->paginate(10);
+            ->paginate(10); /*using scopehome for the cache
+            */
 
+        $articles = Article::home();
         return view('articles.index', compact('articles'));
     }
 
