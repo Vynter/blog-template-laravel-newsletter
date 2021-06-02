@@ -6,6 +6,7 @@ use App\Article;
 
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Cache;
 use RealRashid\SweetAlert\Facades\Alert;
 
 class ArticleController extends Controller
@@ -103,7 +104,7 @@ class ArticleController extends Controller
      */
     public function update(Request $request, Article $article)
     {
-        //
+        Cache::flush();
     }
 
     /**

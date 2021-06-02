@@ -102,8 +102,9 @@ class Article extends Model
     public function scopeHome($query)
     {
         $q = request('q');
+        $page = request('page');
 
-        return Cache::remember('home-page-' . $q, 60 * 20, function () use ($query, $q) {
+        return Cache::remember('home-page-' . $q . '-' . $page, 60 * 20, function () use ($query, $q) {
             return $query->recherche($q)
                 ->latest('id')
                 ->with('user')->paginate(10);
