@@ -41,8 +41,8 @@ class SendNewsletter extends Command
      */
     public function handle()
     {
-        //$articles = Article::orderBy('id', 'desc')->limit(10)->get();
-        $articles = Article::whereDate('published_at', '>=', now()->startOfWeek())->get();
+        $articles = Article::orderBy('id', 'desc')->limit(10)->get();
+        //$articles = Article::whereDate('published_at', '>=', now()->startOfWeek())->get();
         $users = Newsletter::all()->pluck('mail'); //['amine@gotmail.com','momo@gmail.com']; format optimal //$users = Newsletter::pluck('mail');
         foreach ($users as $email) {
             Mail::to($email)->send(new MailNewsletter($email, $articles));
